@@ -49,9 +49,9 @@ def main():
             towel.show()
         elif arg[0] == "seca":
             towel.isDry()
-            print(f"'sim' if towel.isDry() else: 'nao'")
+            print("sim" if towel.isDry() else "nao")
         elif arg[0] == "enxugar":
-            amount:int = int(arg[0])
+            amount:int = int(arg[1])
             towel.dry(amount)
         elif arg[0] == "torcer":
             towel.wringOut()
