@@ -7,6 +7,7 @@ version: 0.0.1
 database: database
 expanded:
 - campanha-principal
+- bloco_b-primeiras-classes
 tasks: {}
 flags:
   quests: 0
@@ -14,4 +15,4 @@ flags:
   tasks: 0
   graph: 0
   xray: 0
-index: bloco_b-primeiras-classes
+index: enxugar
