@@ -1,0 +1,39 @@
+{
+    "patches": [
+        {
+            "label": "2025-09-26_08-35-37",
+            "content": "@@ -63,28 +63,24 @@\n .battery:int\n- = 0\n %0A           \n@@ -211,19 +211,16 @@\n .battery\n-Max\n  += incr\n@@ -308,9 +308,9 @@\n lay%7D\n-%25\n+:\n .2f,\n",
+            "lines": "26"
+        },
+        {
+            "label": "2025-09-26_09-03-55",
+            "content": "@@ -236,179 +236,8 @@\n ent%0A\n-        def charge(self, amount:int):%0A            self.battery += amount%0A            if self.battery %3E self.batteryMax:%0A                    self.battery = self.batteryMax%0A\n     \n@@ -314,13 +314,13 @@\n play\n-:\n+%7D%25\n .2f\n-%7D\n , ba\n@@ -553,34 +553,32 @@\n   break%0A        \n-el\n if arg%5B0%5D == %22sh\n@@ -606,34 +606,32 @@\n t(calc)%0A        \n-el\n if arg%5B0%5D == %22in\n@@ -683,135 +683,8 @@\n %5D))%0A\n-        elif arg%5B0%5D == %22charge%22:%0A            calc.charge(int(arg%5B1%5D))%0A        else:%0A            print(%22comando nao encontrado%22)\n %0A%0Aif\n",
+            "lines": "26"
+        },
+        {
+            "label": "2025-09-26_09-32-39",
+            "content": "@@ -175,19 +175,25 @@\n x(self, \n-max\n+increment\n :int):%0A \n@@ -223,42 +223,20 @@\n Max \n++\n = \n-max%0A            self.battery = 0\n+increment\n %0A   \n",
+            "lines": "33"
+        },
+        {
+            "label": "2025-09-26_09-49-53",
+            "content": "@@ -423,238 +423,8 @@\n Max%0A\n-        def funcSum(self, a:int , b:int):%0A            if self.battery == 0:%0A                 print(%22fail: bateria insuficiente%22)%0A            else:%0A                self.battery -= 1%0A                self.display = a + b            %0A\n     \n@@ -944,89 +944,8 @@\n %5D))%0A\n-        elif arg%5B0%5D == %22sum%22:%0A            calc.funcSum(int(arg%5B1%5D), int(arg%5B2%5D))%0A\n     \n",
+            "lines": "34"
+        },
+        {
+            "label": "2025-09-26_10-04-43",
+            "content": "@@ -641,332 +641,18 @@\n + b \n-%0A        def funcDiv(self, a:int, b:int):%0A            if self.battery == 0:%0A                 print(%22fail: bateria insuficiente%22)%0A            elif b == 0:%0A                print(%22fail: divisao por zero%22)%0A                self.battery -= 1%0A            else:%0A                self.battery -= 1%0A                self.display = a / b\n+          \n  %0A  \n",
+            "lines": "42"
+        },
+        {
+            "label": "2025-09-26_10-07-38",
+            "content": "@@ -1569,93 +1569,8 @@\n %5D))%0A\n-        elif arg%5B0%5D == %22div%22:%0A                calc.funcDiv(int(arg%5B1%5D), int(arg%5B2%5D))%0A\n     \n",
+            "lines": "51"
+        },
+        {
+            "label": "2025-09-26_10-12-08",
+            "content": "class Calculator:\n        def __init__(self):\n            self.battery:int = 0\n            self.batteryMax:int = 0\n            self.display:float = 0\n        def setBatteryMax(self, max:int):\n            self.batteryMax = max\n            self.battery = 0\n        def charge(self, amount:int):\n            self.battery += amount\n            if self.battery > self.batteryMax:\n                    self.battery = self.batteryMax\n        def funcSum(self, a:int , b:int):\n            if self.battery == 0:\n                 print(\"fail: bateria insuficiente\")\n            else:\n                self.battery -= 1\n                self.display = a + b \n        def funcDiv(self, a:int, b:int):\n            if self.battery == 0:\n                 print(\"fail: bateria insuficiente\")\n            elif b == 0:\n                print(\"fail: divisao por zero\")\n                self.battery -= 1\n            else:\n                self.battery -= 1\n                self.display = a / b \n        def __str__(self) -> str:\n            return f\"display = {self.display:.2f}, battery = {self.battery}\"\n        \ndef main():\n    calc:Calculator = Calculator()\n    while True:\n        line : str= input()\n        arg:list[str] = line.split(\" \")\n        print(\"$\"+line)\n        if arg[0] == \"end\":\n            break\n        elif arg[0] == \"show\":\n            print(calc)\n        elif arg[0] == \"init\":\n            calc.setBatteryMax(int(arg[1]))\n        elif arg[0] == \"charge\":\n            calc.charge(int(arg[1]))\n        elif arg[0] == \"sum\":\n            calc.funcSum(int(arg[1]), int(arg[2]))\n        elif arg[0] == \"div\":\n                calc.funcDiv(int(arg[1]), int(arg[2]))\n        else:\n            print(\"comando nao encontrado\")\n\nif __name__ == \"__main__\":\n    main()",
+            "lines": "53"
+        }
+    ]
+}
